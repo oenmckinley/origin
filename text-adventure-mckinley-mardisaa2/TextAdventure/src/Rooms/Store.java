@@ -46,4 +46,9 @@ public class Store extends Room{
 		}
 	}
 	
+	@Override
+	public void unlock(Player p) {
+		locked = false;
+	}
+	
 }

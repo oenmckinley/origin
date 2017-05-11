@@ -2,8 +2,8 @@ package Rooms;
 
 import java.util.ArrayList;
 
+import DriverEtc.Player;
 import Things.Item;
-import Things.Key;
 import Things.Monster;
 import Things.PickUp;
 
@@ -22,8 +22,8 @@ public class HouseInt extends Room{
 		waits = 0;
 	}
 	
-	public void unlock(Key k) {
-		if (k.getName().equals("Hairpin")) {
+	public void unlock(Player p) {
+		if (p.hasItem("Hairpin")) {
 			locked = false;
 			System.out.println("You pick the lock with your hairpin. The door is now open.");
 		} else {
@@ -44,7 +44,8 @@ public class HouseInt extends Room{
 		case 3:
 			info = "Why are you looking around? There is a monster!";
 			enemies = new ArrayList<Monster>();
-			enemies.add(new Monster("Ghoul", "A terrifying humanoid figure. This thing is crazy strong.", "Congratulations! Go tell Bobby about your success!", 20, 1000));
+			enemies.add(new Monster("Ghoul", "A terrifying humanoid figure. This thing is crazy strong.", "Congratulations! Go tell Bobby about your success!", 20, 1000, new Item("Eyeball", "Legend says that the eyes of a Ghoul have medicinal properties. Better not try it without asking Bobby, though...")));
+			System.out.println("A Ghoul jumps out and surprises you. It begins to attack!");
 		}
 	}
 	

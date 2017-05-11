@@ -20,6 +20,30 @@ public abstract class Room {
 	protected ArrayList<Friendly> friendlies;
 	protected int waits;
 
+	public boolean isLocked() {
+		return locked;
+	}
+	
+	public ArrayList<Monster> getEnemies() {
+		return enemies;
+	}
+	
+	public Room getN() {
+		return n;
+	}
+	
+	public Room getS() {
+		return s;
+	}
+	
+	public Room getE() {
+		return e;
+	}
+	
+	public Room getW() {
+		return w;
+	}
+	
 	public PickUp getItem(String item) {
 		for (PickUp p : items) {
 			if (p.getName().equals(item)) {
@@ -82,5 +106,7 @@ public abstract class Room {
 	}
 	
 	public abstract void waitTurn();
+	
+	public abstract void unlock(Player p);
 	
 }

@@ -2,8 +2,8 @@ package Rooms;
 
 import java.util.ArrayList;
 
+import DriverEtc.Player;
 import Things.Item;
-import Things.Key;
 import Things.PickUp;
 
 public class HouseExt extends Room{
@@ -15,14 +15,14 @@ public class HouseExt extends Room{
 		this.e = null;
 		this.w = l;
 		this.items = new ArrayList<PickUp>();
-		items.add(new Item("Fang", "It is an extremely sharp fang. Better show this to Bobby!"));
+		items.add(new Item("Fang", "It is an extremely sharp fang. Better show this to Bobby once you get more clues!"));
 		this.friendlies = null;
 		this.enemies = null;
 		waits = 0;
 	}
 	
-	public void unlock(Key k) {
-		if (k.getName().equals("Directions")) {
+	public void unlock(Player p) {
+		if (p.hasItem("Directions")) {
 			locked = false;
 			System.out.println("The directions help you find your way.");
 		} else {

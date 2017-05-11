@@ -12,7 +12,7 @@ public class Player {
 	private Inventory inv;
 
 	public Player() {
-		equip = null;
+		equip = new Weapon ("Fists", "Your all-natural weapons.", 45);
 		health = MAX_HEALTH;
 		inv = new Inventory();
 	}

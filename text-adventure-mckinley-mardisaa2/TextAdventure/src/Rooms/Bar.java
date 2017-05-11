@@ -45,15 +45,9 @@ public class Bar extends Room {
 	}
 	
 	public void trigger() {
-		if (items.isEmpty() && enemies == null) {
+		if (!items.get(0).getName().equals("beer") ) {
 			enemies = new ArrayList<Monster>();
-			enemies.add(new Monster("Ruffian", "A huge, intimidating guy. He wants to fight.", "You beat the ruffian. That was way too easy.", 10, 100));
-		}
-	}
-
-	public void itemDrop(Player p) {
-		if (enemies != null && !enemies.get(0).isAlive() && (!(hasItem("Wallet") || p.hasItem("Wallet")))) {
-			items.add(new Item("Wallet", "A wallet with money in it. I guess he won't miss it."));
+			enemies.add(new Monster("Ruffian", "A huge, intimidating guy. He wants to fight.", "You beat the ruffian. That was way too easy.", 10, 100, new Item("Wallet", "A wallet with money in it. I guess he won't miss it.")));
 		}
 	}
 
@@ -67,5 +61,10 @@ public class Bar extends Room {
 			friendlies.add(new Friendly("Waitress", "Here's my number. I get off at 3:00."));
 			info = "This is an extremely busy place, and people around here seem anxious to fight. There is an unattended beer on the table. The bartender greets you as you walk in. A waitress is passing time by the bar.";
 		}
+	}
+	
+	@Override
+	public void unlock(Player p) {
+		locked = false;
 	}
 }

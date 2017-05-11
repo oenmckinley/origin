@@ -1,5 +1,6 @@
 package Rooms;
 
+import DriverEtc.Player;
 import Things.Key;
 
 public class Street extends Room {
@@ -31,6 +32,9 @@ public class Street extends Room {
 		waits++;
 	}
 	
-	
+	@Override
+	public void unlock(Player p) {
+		locked = false;
+	}
 	
 }

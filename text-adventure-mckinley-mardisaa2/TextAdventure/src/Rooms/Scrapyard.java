@@ -1,5 +1,7 @@
 package Rooms;
 
+import DriverEtc.Player;
+
 public class Scrapyard extends Room{
 
 	public Scrapyard(BobbyHouse b){
@@ -20,6 +22,9 @@ public class Scrapyard extends Room{
 		waits++;
 	}
 	
-	
+	@Override
+	public void unlock(Player p) {
+		locked = false;
+	}
 	
 }

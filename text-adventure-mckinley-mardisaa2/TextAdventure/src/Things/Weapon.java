@@ -1,4 +1,5 @@
 package Things;
+
 public class Weapon extends PickUp {
 	
 	private int attStat;
@@ -11,13 +12,6 @@ public class Weapon extends PickUp {
 	
 	public int getAttack() {
 		return attStat;
-	}
-	
-	public void useOn(Monster m) {
-		m.attack(this);
-		if (!m.isAlive()) {
-			System.out.println("You have slain the " + m.getName() + "!");
-		}
 	}
 	
 }

@@ -1,5 +1,7 @@
 package Rooms;
 
+import DriverEtc.Player;
+
 public class Lake extends Room{
 	public Lake(Street s){
 		this.locked = false;
@@ -17,5 +19,10 @@ public class Lake extends Room{
 	@Override
 	public void waitTurn() {
 		waits++;
+	}
+	
+	@Override
+	public void unlock(Player p) {
+		locked = false;
 	}
 }
